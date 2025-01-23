@@ -4,7 +4,7 @@
 - If you encounter any issues or have questions related to this project, please don't hesitate to reach out to us on messenger. we're here to assist you!
 
 <p align="center">
-		<img align="center" alt="PNG" src="https://i.postimg.cc/Y2XShSm8/86678c65-896a-47fe-8256-3e8e76dd26d6.jpg"/>
+		
 <h1 align='center'>
 	
 - [📝 **Note**](#-note)
