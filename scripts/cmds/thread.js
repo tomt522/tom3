@@ -8,7 +8,7 @@ module.exports = {
 		countDown: 5,
 		role: 0,
 		description: {
-			vi: "Quản lý các nhóm chat trong hệ thống bot",
+			
 			en: "Manage group chat in bot system"
 		},
 		category: "owner",
@@ -37,17 +37,7 @@ module.exports = {
 	},
 
 	langs: {
-		vi: {
-			noPermission: "Bạn không có quyền sử dụng tính năng này",
-			found: "🔎 Tìm thấy %1 nhóm trùng với từ khóa \"%2\" trong dữ liệu của bot:\n%3",
-			notFound: "❌ Không tìm thấy nhóm nào có tên khớp với từ khoá: \"%1\" trong dữ liệu của bot",
-			hasBanned: "Nhóm mang id [%1 | %2] đã bị cấm từ trước:\n» Lý do: %3\n» Thời gian: %4",
-			banned: "Đã cấm nhóm mang id [%1 | %2] sử dụng bot.\n» Lý do: %3\n» Thời gian: %4",
-			notBanned: "Hiện tại nhóm mang id [%1 | %2] không bị cấm sử dụng bot",
-			unbanned: "Đã bỏ cấm nhóm mang tid [%1 | %2] sử dụng bot",
-			missingReason: "Lý do cấm không được để trống",
-			info: "» Box ID: %1\n» Tên: %2\n» Ngày tạo data: %3\n» Tổng thành viên: %4\n» Nam: %5 thành viên\n» Nữ: %6 thành viên\n» Tổng tin nhắn: %7%8"
-		},
+		
 		en: {
 			noPermission: "You don't have permission to use this feature",
 			found: "🔎 Found %1 group matching the keyword \"%2\" in bot data:\n%3",

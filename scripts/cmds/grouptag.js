@@ -12,20 +12,7 @@ module.exports = {
 		},
 		category: "info",
 		guide: {
-			vi: "   {pn} add <groupTagName> <@tags>: dùng để thêm nhóm tag mới hoặc thêm thành viên vào nhóm tag đã có"
-				+ "\n   Ví dụ:"
-				+ "\n    {pn} add TEAM1 @tag1 @tag2"
-				+ "\n\n   {pn} del <groupTagName> <@tags>: dùng để xóa các thành viên được tag khỏi nhóm tag <groupTagName>"
-				+ "\n   Ví dụ:"
-				+ "\n    {pn} del TEAM1 @tag1 @tag2"
-				+ "\n\n   {pn} remove <groupTagName>: dùng để xóa nhóm tag"
-				+ "\n   Ví dụ:"
-				+ "\n    {pn} remove TEAM1"
-				+ "\n\n	 {pn} tag <groupTagName>: dùng để tag nhóm tag"
-				+ "\n\n   {pn} rename <groupTagName> | <newGroupTagName>: dùng để đổi tên nhóm tag"
-				+ "\n\n   {pn} [list | all]: dùng để xem danh sách các nhóm tag trong nhóm chat của bạn"
-				+ "\n\n   {pn} info <groupTagName>: dùng để xem thông tin của nhóm tag",
-			en: "   {pn} add <groupTagName> <@tags>: use to add new group tag or add members to group tag"
+		en: "   {pn} add <groupTagName> <@tags>: use to add new group tag or add members to group tag"
 				+ "\n   Example:"
 				+ "\n    {pn} add TEAM1 @tag1 @tag2"
 				+ "\n\n   {pn} del <groupTagName> <@tags>: use to remove members from group tag"
@@ -42,23 +29,7 @@ module.exports = {
 	},
 
 	langs: {
-		vi: {
-			noGroupTagName: "Vui lòng nhập tên nhóm tag",
-			noMention: "Bạn chưa tag thành viên nào để thêm vào nhóm tag",
-			addedSuccess: "Đã thêm các thành viên sau vào nhóm tag \"%1\":\n%2",
-			addedSuccess2: "Đã thêm nhóm tag \"%1\" với các thành viên sau:\n%2",
-			existedInGroupTag: "Các thành viên sau:\n%1\nđã có trong nhóm tag \"%2\" từ trước",
-			notExistedInGroupTag: "Các thành viên sau:\n%1\nkhông có trong nhóm tag \"%2\"",
-			noExistedGroupTag: "Nhóm tag \"%1\" không tồn tại trong box chat của bạn",
-			noExistedGroupTag2: "Box chat của bạn chưa thêm nhóm tag nào",
-			noMentionDel: "Vui lòng tag thành viên muốn xóa khỏi nhóm tag \"%1\"",
-			deletedSuccess: "Đã xóa các thành viên sau:\n%1\nkhỏi nhóm tag \"%2\"",
-			deletedSuccess2: "Đã xóa nhóm tag \"%1\"",
-			tagged: "Tag nhóm \"%1\":\n%2",
-			noGroupTagName2: "Vui lòng nhập tên nhóm tag cũ và tên mới, cách nhau bằng dấu \"|\"",
-			renamedSuccess: "Đã đổi tên nhóm tag \"%1\" thành \"%2\"",
-			infoGroupTag: "📑 | Tên nhóm: %1\n👥 | Số thành viên: %2\n👨‍👩‍👧‍👦 | Danh sách thành viên:\n %3"
-		},
+		
 		en: {
 			noGroupTagName: "Please enter group tag name",
 			noMention: "You haven't tagged any member to add to group tag",

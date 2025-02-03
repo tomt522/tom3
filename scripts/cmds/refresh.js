@@ -1,4 +1,4 @@
-module.exports = {
+ module.exports = {
 	config: {
 		name: "refresh",
 		version: "1.2",
