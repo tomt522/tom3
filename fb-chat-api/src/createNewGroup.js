@@ -1,7 +1,7 @@
 "use strict";
 
-const utils = require("../utils");
-// @NethWs3Dev
+var utils = require("../utils");
+var log = require("npmlog");
 
 module.exports = function (defaultFuncs, api, ctx) {
   return function createNewGroup(participantIDs, groupTitle, callback) {
@@ -10,41 +10,29 @@ module.exports = function (defaultFuncs, api, ctx) {
       groupTitle = null;
     }
 
-    if (utils.getType(participantIDs) !== "Array") {
-      throw { error: "createNewGroup: participantIDs should be an array." };//
-    }
+    if (utils.getType(participantIDs) !== "Array") throw { error: "createNewGroup: participantIDs should be an array." };
 
-    if (participantIDs.length < 2) {
-      throw {
-        error: "createNewGroup: participantIDs should have at least 2 IDs.",
-      };
-    }
+    if (participantIDs.length < 2) throw { error: "createNewGroup: participantIDs should have at least 2 IDs." };
 
-    let resolveFunc = function () {};
-    let rejectFunc = function () {};
-    const returnPromise = new Promise(function (resolve, reject) {
+    var resolveFunc = function () { };
+    var rejectFunc = function () { };
+    var returnPromise = new Promise(function (resolve, reject) {
       resolveFunc = resolve;
       rejectFunc = reject;
     });
 
     if (!callback) {
       callback = function (err, threadID) {
-        if (err) {
-          return rejectFunc(err);
-        }
+        if (err) return rejectFunc(err);
         resolveFunc(threadID);
       };
     }
 
-    const pids = [];
-    for (const n in participantIDs) {
-      pids.push({
-        fbid: participantIDs[n],
-      });
-    }
+    var pids = [];
+    for (var n in participantIDs) pids.push({ fbid: participantIDs[n] });
     pids.push({ fbid: ctx.userID });
 
-    const form = {
+    var form = {
       fb_api_caller_class: "RelayModern",
       fb_api_req_friendly_name: "MessengerGroupCreateMutation",
       av: ctx.userID,
@@ -59,27 +47,21 @@ module.exports = function (defaultFuncs, api, ctx) {
           thread_settings: {
             name: groupTitle,
             joinable_mode: "PRIVATE",
-            thread_image_fbid: null,
-          },
-        },
-      }),
+            thread_image_fbid: null
+          }
+        }
+      })
     };
 
     defaultFuncs
       .post("https://www.facebook.com/api/graphql/", ctx.jar, form)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then(function (resData) {
-        if (resData.errors) {
-          throw resData;
-        }
-        return callback(
-          null,
-          resData.data.messenger_group_thread_create.thread.thread_key
-            .thread_fbid,
-        );
+        if (resData.errors) throw resData;
+        return callback(null, resData.data.messenger_group_thread_create.thread.thread_key.thread_fbid);
       })
       .catch(function (err) {
-        console.error("createNewGroup", err);
+        log.error("createNewGroup", err);
         return callback(err);
       });
 

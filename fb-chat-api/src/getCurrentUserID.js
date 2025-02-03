@@ -1,7 +1,7 @@
 "use strict";
 
-module.exports = (defaultFuncs, api, ctx) => {
-  return () => {
+module.exports = function (defaultFuncs, api, ctx) {
+  return function getCurrentUserID() {
     return ctx.userID;
   };
 };

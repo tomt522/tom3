@@ -1,6 +1,7 @@
 'use strict';
 
 var utils = require('../utils');
+var log = require('npmlog');
 
 module.exports = function (defaultFuncs, api, ctx) {  
   function handleUpload(msg, form) {
@@ -163,7 +164,7 @@ module.exports = function (defaultFuncs, api, ctx) {
 
     if (typeof msg == 'function') {
       var error = 'Msg must be a string or object and not function';
-      console.error('createPost', error);
+      log.error('createPost', error);
       return msg(error);
     }
     if (typeof callback == 'function') cb = callback;
@@ -171,7 +172,7 @@ module.exports = function (defaultFuncs, api, ctx) {
     var typeMsg = utils.getType(msg);
     if (!['Object', 'String'].includes(typeMsg)) {
       var error = 'Msg must be a string or object and not ' + typeMsg;
-      console.error('createPost', error);
+      log.error('createPost', error);
       return cb(error);
     } else if (typeMsg == 'String') msg = { body: msg };
     msg.allowUserID = msg.allowUserID ? !Array.isArray(msg.allowUserID) ? [msg.allowUserID] : msg.allowUserID : null;
@@ -261,12 +262,13 @@ module.exports = function (defaultFuncs, api, ctx) {
       .then(_ => handleUrl(msg, form))
       .then(_ => handleMention(msg, form))
       .then(_ => createContent(form))
-      .then((res) => {
+      .then(function (res) {
         if (res.error || res.errors) throw res;
+
         return cb(null, (res[0] || res).data.story_create.story.url);
       })
-      .catch((err) => {
-        //console.error('createPost', err);
+      .catch(function (err) {
+        log.error('createPost', err);
         return cb(err);
       });
 

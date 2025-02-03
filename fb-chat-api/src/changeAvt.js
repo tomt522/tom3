@@ -1,8 +1,7 @@
-
 "use strict";
 
 var utils = require("../utils");
-// @NethWs3Dev
+var log = require("npmlog");
 /**
  * It posts an image to a Facebook profile
  * @param Api - The API object
@@ -11,7 +10,7 @@ var utils = require("../utils");
  * @returns The JSON.parse(Data.split("for (;;);")[1]); is returning the following:
  * {"__ar":1,"payload":null,"jsmods":{"require":[["ImageUploader","uploadPhoto",[{"__m":"__elem_0"},{"__m":"__elem_1"},{"__m":"__elem_2"},{"__m":"__
  */
-async function postImage(Api, BotID, form) {
+async function postImage(Api,BotID,form) {
     var Data = await Api.httpPostFormData(`https://www.facebook.com/profile/picture/upload/?profile_id=${BotID}&photo_source=57&av=${BotID}`, form);
     return JSON.parse(Data.split("for (;;);")[1]);
 }
