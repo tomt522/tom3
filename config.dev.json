@@ -46,7 +46,7 @@
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
   "nickNameBot": "𝐓𝐎𝐌🎀",
-  "prefix": "-",
+  "prefix": ".",
   "BaYjidnapi": "",
   "api": "",
   "api2": "",
@@ -70,10 +70,10 @@
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": ""s.khasanmahamud324@gmail.com",",
-      "clientId": ""1038587958316-ugoqskt5s8itgca98ahjulp4691lhd9v.apps.googleusercontent.com",",
-      "clientSecret": "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",
-      "refreshToken": "1//04ra2waD4ABt3CgYIARAAGAQSNgF-L9IrYkOHdKbzJwt5kMXGWgdKgc2aF3CxAdJ96G-113vAhZZR2L1fFuzCVslX_QvBGv2R0w",
+      "email": "",
+      "clientId": "249889492292-qff3skitvnud3hle736ugm3tt53fh1sg.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04l_q7zGN41-ECgYIARAAGAQSNwF-L9Ir-t_MXlcP231dJo3boIXhkCZj0wdxFRo6xNCEc36kzQhJ3uJwhmTeAVHizb1XofhvSHw",
       "apiKey": ""
     },
     "gRecaptcha": {
